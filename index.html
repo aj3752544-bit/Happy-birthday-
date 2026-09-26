@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Amber Apii ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Georgia,serif;
+    background:linear-gradient(135deg,#fff0f6,#ffe4ec,#fcecff);
+    color:#4b2635;
+    min-height:100vh;
+    overflow-x:hidden;
+}
+
+.hidden{
+    display:none !important;
+}
+
+/* PASSWORD SCREEN */
+
+#passwordScreen{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.passwordBox{
+    width:100%;
+    max-width:390px;
+    text-align:center;
+    background:rgba(255,255,255,.82);
+    padding:40px 25px;
+    border-radius:28px;
+    box-shadow:0 15px 50px rgba(180,80,120,.2);
+}
+
+.lock{
+    font-size:55px;
+    margin-bottom:15px;
+}
+
+.passwordBox h1{
+    font-size:28px;
+    margin-bottom:10px;
+}
+
+.passwordBox p{
+    color:#8b6372;
+    margin-bottom:25px;
+}
+
+#passwordInput{
+    width:100%;
+    padding:15px;
+    border:2px solid #f0bfd0;
+    border-radius:15px;
+    outline:none;
+    font-size:16px;
+    text-align:center;
+}
+
+#openBtn{
+    width:100%;
+    margin-top:15px;
+    padding:15px;
+    border:0;
+    border-radius:15px;
+    background:#d95c89;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+}
+
+#error{
+    color:#d43d69;
+    margin-top:15px;
+    font-weight:bold;
+    min-height:22px;
+}
+
+/* MAIN */
+
+#main{
+    min-height:100vh;
+    text-align:center;
+    padding:30px 18px 70px;
+}
+
+.hero{
+    min-height:85vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+}
+
+.flowers{
+    position:fixed;
+    bottom:-50px;
+    left:0;
+    width:100%;
+    pointer-events:none;
+    z-index:0;
+}
+
+.flower{
+    position:absolute;
+    bottom:0;
+    font-size:35px;
+    animation:bloom 4s ease-out forwards;
+}
+
+@keyframes bloom{
+    0%{
+        transform:translateY(100px) scale(0);
+        opacity:0;
+    }
+    70%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(0) scale(1);
+        opacity:1;
+    }
+}
+
+.birthday{
+    position:relative;
+    z-index:2;
+    animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(35px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.smallText{
+    letter-spacing:4px;
+    font-size:14px;
+    color:#a76b80;
+}
+
+.birthday h1{
+    font-size:clamp(42px,12vw,75px);
+    margin:15px 0;
+    color:#c83f73;
+    text-shadow:0 5px 20px rgba(200,63,115,.2);
+}
+
+.name{
+    font-size:32px;
+    font-weight:bold;
+}
+
+.age{
+    margin-top:8px;
+    font-size:20px;
+    color:#9b6074;
+}
+
+/* PHOTO */
+
+.photoBox{
+    margin:35px auto;
+    width:min(310px,90vw);
+    height:380px;
+    border-radius:30px;
+    background:rgba(255,255,255,.7);
+    border:5px solid white;
+    box-shadow:0 15px 40px rgba(170,70,110,.2);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.photoBox img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.photoPlaceholder{
+    padding:20px;
+    color:#9b6878;
+}
+
+/* WISH */
+
+.section{
+    max-width:700px;
+    margin:70px auto;
+}
+
+.section h2{
+    font-size:32px;
+    color:#c83f73;
+    margin-bottom:20px;
+}
+
+.wish{
+    background:rgba(255,255,255,.75);
+    padding:30px 25px;
+    border-radius:25px;
+    line-height:1.9;
+    font-size:17px;
+    box-shadow:0 10px 30px rgba(170,70,110,.12);
+}
+
+/* MEMORIES */
+
+.memoryButton{
+    display:inline-block;
+    margin-top:20px;
+    padding:15px 28px;
+    border-radius:20px;
+    background:#d95c89;
+    color:white;
+    border:0;
+    font-size:17px;
+    cursor:pointer;
+}
+
+.memories{
+    margin-top:30px;
+}
+
+.memoryCard{
+    background:white;
+    margin:20px auto;
+    padding:15px;
+    border-radius:22px;
+    max-width:500px;
+    box-shadow:0 10px 30px rgba(170,70,110,.12);
+}
+
+.memoryCard img,
+.memoryCard video{
+    width:100%;
+    max-height:500px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.memoryCard p{
+    padding:12px 5px;
+    font-weight:bold;
+}
+
+.final{
+    margin-top:90px;
+    padding:40px 20px;
+}
+
+.final h2{
+    font-size:30px;
+    color:#c83f73;
+}
+
+.final p{
+    margin-top:15px;
+    font-size:18px;
+}
+
+.musicBtn{
+    position:fixed;
+    right:18px;
+    bottom:18px;
+    width:55px;
+    height:55px;
+    border-radius:50%;
+    border:0;
+    background:#d95c89;
+    color:white;
+    font-size:22px;
+    z-index:10;
+}
+</style>
+</head>
+
+<body>
+
+<!-- PASSWORD -->
+
+<div id="passwordScreen">
+
+    <div class="passwordBox">
+
+        <div class="lock">🔐</div>
+
+        <h1>A Little Surprise...</h1>
+
+        <p>Only Amber Apii can enter 💗</p>
+
+        <input
+            type="password"
+            id="passwordInput"
+            placeholder="Enter password"
+        >
+
+        <button id="openBtn" onclick="checkPassword()">
+            Open Surprise 🎁
+        </button>
+
+        <div id="error"></div>
+
+    </div>
+
+</div>
+
+
+<!-- MAIN WEBSITE -->
+
+<div id="main" class="hidden">
+
+    <div class="flowers">
+        <span class="flower" style="left:5%;animation-delay:.2s">🌷</span>
+        <span class="flower" style="left:18%;animation-delay:.6s">🌸</span>
+        <span class="flower" style="left:32%;animation-delay:1s">🌷</span>
+        <span class="flower" style="left:48%;animation-delay:.4s">🌸</span>
+        <span class="flower" style="left:62%;animation-delay:1.2s">🌺</span>
+        <span class="flower" style="left:77%;animation-delay:.7s">🌷</span>
+        <span class="flower" style="left:90%;animation-delay:1.5s">🌸</span>
+    </div>
+
+
+    <section class="hero">
+
+        <div class="birthday">
+
+            <div class="smallText">
+                A SPECIAL DAY FOR SOMEONE SPECIAL
+            </div>
+
+            <h1>Happy Birthday</h1>
+
+            <div class="name">
+                Amber Apii 🤍
+            </div>
+
+            <div class="age">
+                25 Years ✨
+            </div>
+
+            <div class="photoBox">
+
+                <!-- BAAD MEIN YAHAN AMBER APII KI PHOTO LAGAYENGE -->
+
+                <div class="photoPlaceholder">
+                    📸<br><br>
+                    Amber Apii's beautiful picture
+                    <br><br>
+                    <small>Photo will be added here ❤️</small>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WISH -->
+
+    <section class="section">
+
+        <h2>A Little Wish For You 💌</h2>
+
+        <div class="wish">
+
+            Happy Birthday to the most special sister! 🥹❤️
+
+            <br><br>
+
+            May Allah bless you with endless happiness,
+            beautiful moments, good health and everything
+            your heart wishes for.
+
+            <br><br>
+
+            You deserve all the love, smiles and happiness
+            in the world. Keep smiling and keep being the
+            amazing person you are.
+
+            <br><br>
+
+            Happy 25th Birthday, Amber Apii! 🎂🌸
+
+            <br><br>
+
+            <b>Love you always 🤍</b>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORIES -->
+
+    <section class="section">
+
+        <h2>Our Memories 📸</h2>
+
+        <p>
+            Some pictures, videos and a little bit of
+            embarrassing evidence 😂❤️
+        </p>
+
+        <button class="memoryButton" onclick="showMemories()">
+            Open Our Memories ✨
+        </button>
+
+        <div id="memories" class="memories hidden">
+
+            <div class="memoryCard">
+
+                <div class="photoPlaceholder">
+                    📸 Your picture will go here
+                </div>
+
+                <p>A beautiful memory 🤍</p>
+
+            </div>
+
+            <div class="memoryCard">
+
+                <div class="photoPlaceholder">
+                    💬 Chat screenshot will go here 😂
+                </div>
+
+                <p>And yes... I still have the evidence 😭😂</p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL -->
+
+    <section class="final">
+
+        <h2>One Last Thing... 🥹❤️</h2>
+
+        <p>
+            No matter how much we fight, annoy each other
+            or make fun of each other...
+        </p>
+
+        <p>
+            You're always going to be my favourite Apii. 🤍
+        </p>
+
+        <p>
+            <b>Happy Birthday, Amber Apii! 🎂🌸</b>
+        </p>
+
+    </section>
+
+
+    <!-- MUSIC BUTTON -->
+
+    <button class="musicBtn" onclick="toggleMusic()">
+        🎵
+    </button>
+
+    <!-- SONG WILL BE ADDED LATER -->
+
+    <audio id="music" loop>
+        <!-- Your song will be added here -->
+    </audio>
+
+</div>
+
+
+<script>
+
+function checkPassword(){
+
+    const password =
+        document.getElementById("passwordInput").value;
+
+    const error =
+        document.getElementById("error");
+
+    if(password === "pagal bhena"){
+
+        document
+        .getElementById("passwordScreen")
+        .classList.add("hidden");
+
+        document
+        .getElementById("main")
+        .classList.remove("hidden");
+
+        window.scrollTo(0,0);
+
+    }else{
+
+        error.innerHTML =
+        "Dimaagh to hai hi nahi 😭😂";
+
+    }
+
+}
+
+
+document
+.getElementById("passwordInput")
+.addEventListener("keypress",function(event){
+
+    if(event.key === "Enter"){
+        checkPassword();
+    }
+
+});
+
+
+function showMemories(){
+
+    document
+    .getElementById("memories")
+    .classList.remove("hidden");
+
+}
+
+
+function toggleMusic(){
+
+    const music =
+        document.getElementById("music");
+
+    if(music.paused){
+        music.play();
+    }else{
+        music.pause();
+    }
+
+}
+
+</script>
+
+</body>
+                      </html>
